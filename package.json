@@ -1,3 +1,6 @@
+"scripts": {
+  "start": "node server.js"
+}
 {
   "name": "pi-coin-exchange",
   "version": "1.0.0",
