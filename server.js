@@ -1,23 +1,22 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const path = require("path");
-require("dotenv").config();
+const express = require('express');
+const path = require('path');
+require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 10000;
 
-// Middlewares
-app.use(bodyParser.json());
-app.use(cors());
-app.use(express.static(path.join(__dirname, "public")));
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Health check route (important for Render)
-app.get("/", (req, res) => {
-  res.send("Pi Coin Exchange Server is running!");
+// Serve static files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start server on Render's port
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on http://0.0.0.0:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Pi Coin Exchange Server is running on port ${PORT}`);
 });
