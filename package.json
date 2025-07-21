@@ -1,1 +1,17 @@
-{"name": "pi-coin-exchange", "version": "1.0.0"}
+{
+  "name": "pi-coin-exchange",
+  "version": "1.0.0",
+  "description": "A simple Pi Coin exchange platform with login, mail notification, and Pi wallet integration.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.3",
+    "sqlite3": "^5.1.6",
+    "dotenv": "^16.1.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
+  }
+}
