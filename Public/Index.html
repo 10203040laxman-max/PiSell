@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pi Coin Exchange</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pi Coin Exchange</h1>
+    <p>Send Pi to this wallet address:</p>
+    <pre id="pi-wallet" class="wallet-address">GDW3ZGYHA5MQMSJQZ24QIITSYMJF3EALVVL3KU5IU5BIS5OOWUBWBAIO</pre>
+
+    <p>Current Pi Price (USD): <span id="pi-price">Loading...</span></p>
+
+    <form id="transfer-form" enctype="multipart/form-data">
+      <label>
+        Pi Amount Sent:
+        <input type="number" step="any" name="amount" required />
+      </label>
+
+      <label>
+        Upload Screenshot of Transfer:
+        <input type="file" name="screenshot" accept="image/*" required />
+      </label>
+
+      <button type="submit">Submit Transfer</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+  </html>
